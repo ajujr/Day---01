@@ -1,0 +1,17 @@
+01. Difference between HTTP1.1 vs HTTP2
+
+HTTP1.1:
+
+1. It allows only one request (even with request pipelining). This means that it loads the resource one behind the other, 
+   so if one resource cannot be loaded, it blocks all the other resources behind it. 
+2. The server only serves content to a client device if it asks for it. 
+   However, this approach is not always practical for modern web pages, which often involve several dozen different resources that the client must request.
+3. It speeds up web performance by compressing the HTTP messages to make them smaller, So the Small files load more quickly than large ones.
+
+HTTP 2:
+
+1. It uses a single TCP connection to send multiple streams of data at once so that no one resource blocks any other resource. 
+2. It solves this problem by allowing a server to “push” content before the client asks for it. 
+3. It uses a more advanced compression method called HPACK that eliminates redundant information in HTTP header packets. This eliminates a few bytes from every HTTP packet. 
+   Given the volume of HTTP packets involved in loading even a single webpage,those bytes add up quickly, resulting in faster loading.
+
